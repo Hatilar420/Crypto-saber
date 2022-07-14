@@ -14,7 +14,7 @@ import {
 
 const SDK = require('../../CoinApi/coinapi_v1').default
 
-const sdk = new SDK(process.env.API_KEY || 'F1A4D874-D1A6-4953-AEBE-3894E4218D03')
+const sdk = new SDK(process.env.API_KEY)
 
   ChartJS.register(
     CategoryScale,
