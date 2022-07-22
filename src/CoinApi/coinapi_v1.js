@@ -69,6 +69,19 @@ var COIN_API_SDK = (function () {
             return resp.data;
         });
     };
+
+    COIN_API_SDK.prototype.exchange_rates_get_specific_rate_history = function (asset_id_base, asset_id_quote, start_time, end_time, period) {
+        var path = this.url + ("/v1/exchangerate/" + asset_id_base + "/" + asset_id_quote + "/history");
+        var params = {};
+        params.time_start = start_time.toISOString()
+        params.time_end = end_time.toISOString()
+        params.period_id = period
+        return axios.get(path, { headers: this.headers, transformResponse: transformResponse, params: params })
+            .then(function (resp) {
+            return resp.data;
+        });
+    };
+
     COIN_API_SDK.prototype.exchange_rates_get_all_current_rates = function (asset_id_base) {
         var path = this.url + ("/v1/exchangerate/" + asset_id_base);
         return axios.get(path, { headers: this.headers, transformResponse: transformResponse })

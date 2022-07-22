@@ -32,7 +32,7 @@ function App() {
                 <CurrencyList setCurrency = {setSelectedCurrency} selectedCurrency = {SelectedCurrency}/>
             </div>
             <div className='col-6 p-3 m-1'> 
-                <ChartComponent/>
+                <ChartComponent selectedCurrency = {SelectedCurrency}/>
             </div>
             <div className='col-3 p-3 m-1'>
               <DisplayMiscComponents/>
